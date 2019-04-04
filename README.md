@@ -13,4 +13,4 @@ Topics:
 07. Associative Arrays
 08. Text Processing and Regular Expressions
 09. Basic Web with ASP.NET Core
-10. Basic CRUD with ASP.NET Core and SQL Server
+10. Basic CRUD with ASP.NET Core and MSSQL
