@@ -10,6 +10,11 @@ namespace ToDoList.Data
     {
         public DbSet<Task> Tasks { get; set; }
 
-        private const string ConnectionString = @"Server = .\SQLEPRESS;Database=ToDoListDb;Integrated Security =True;";
+        private const string ConnectionString = @"Server = .\SQLEXPRESS;Database=ToDoListDb;Integrated Security =True;";
+
+        protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(ConnectionString);
+        }
     }
 }
