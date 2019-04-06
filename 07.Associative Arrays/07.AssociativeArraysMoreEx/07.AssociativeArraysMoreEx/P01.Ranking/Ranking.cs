@@ -73,9 +73,21 @@ namespace P01.Ranking
                 nameTotalPoints.Add(key, sum);
             }
 
-            string winner = nameTotalPoints.FirstOrDefault(x => x.Value == nameTotalPoints.Values.Max()).Key;
-            string winnerName = 
-            Console.WriteLine($"Best candidate is {} with total {} points.");
+            string winnerName = nameTotalPoints.FirstOrDefault(x => x.Value == nameTotalPoints.Values.Max()).Key;
+            int winnerPoints = nameTotalPoints.FirstOrDefault(x => x.Value == nameTotalPoints.Values.Max()).Value;
+            Console.WriteLine($"Best candidate is {winnerName} with total {winnerPoints} points.");
+            Console.WriteLine("Ranking: ");
+
+            foreach (var name in nameContestPoints.OrderBy(x=>x.Key))
+            {
+                Console.WriteLine(name.Key);
+                string key = name.Key;
+                
+                foreach (var cource in nameContestPoints[key].OrderByDescending(c=>c.Value))
+                {
+                    Console.WriteLine($"#  {cource.Key} -> {cource.Value}");
+                }
+            }
         }
     }
 }
